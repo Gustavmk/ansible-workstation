@@ -40,5 +40,3 @@ GPLv3
 Created by [Gustavo Kuno](https://github.com/Gustavmk)
 
 Contributions are more than welcome!
-
-# ansible-workstation-ubuntu
