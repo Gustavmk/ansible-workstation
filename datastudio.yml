@@ -1,0 +1,37 @@
+---
+- name: Preparing Azure Data Studio
+  hosts: localhost
+  connection: local
+  tasks:
+
+   - block:
+      - name: Install Virtual Studio Code Extensions
+        shell:
+          cmd: azuredatastudio --install-extension '{{ item }}' 
+        loop: 
+          - ms-dotnettools.dotnet-interactive-vscode
+          - Microsoft.admin-pack
+          - Microsoft.arc
+          - Microsoft.azcli
+          - Microsoft.sql-migration
+          - Microsoft.cms
+          - Microsoft.datavirtualization
+          - Microsoft.admin-tool-ext-win
+          - Microsoft.managed-instance-dashboard
+          - Microsoft.azuredatastudio-postgresql
+          - Microsoft.powershell
+          - Microsoft.query-history
+          - Microsoft.sql-assessment
+          - Microsoft.sql-database-projects
+          - Microsoft.agent
+          - Microsoft.dacpac
+          - Microsoft.import
+          - Microsoft.profiler
+          - Microsoft.schema-compare
+          - Microsoft.azuremonitor
+          - Microsoft.kusto
+          - Microsoft.azuredatastudio-mysql
+          - Microsoft.server-report
+          - visualstudioexptteam.vscodeintellicode
+          - Microsoft.whoisactive
+            
