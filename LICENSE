@@ -176,7 +176,7 @@ your copyrighted material outside their relationship with you.
 the conditions stated below.  Sublicensing is not allowed; section 10
 makes it unnecessary.
 
-  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+3.Protecting Users' Legal Rights From Anti-Circumvention Law.
 
   No covered work shall be deemed part of an effective technological
 measure under any applicable law fulfilling obligations under article
@@ -192,7 +192,7 @@ modification of the work as a means of enforcing, against the work's
 users, your or third parties' legal rights to forbid circumvention of
 technological measures.
 
-  4. Conveying Verbatim Copies.
+4.Conveying Verbatim Copies.
 
   You may convey verbatim copies of the Program's source code as you
 receive it, in any medium, provided that you conspicuously and
@@ -205,7 +205,7 @@ recipients a copy of this License along with the Program.
   You may charge any price or no price for each copy that you convey,
 and you may offer support or warranty protection for a fee.
 
-  5. Conveying Modified Source Versions.
+5.Conveying Modified Source Versions.
 
   You may convey a work based on the Program, or the modifications to
 produce it from the Program, in the form of source code under the
@@ -340,7 +340,7 @@ documented (and with an implementation available to the public in
 source code form), and must require no special password or key for
 unpacking, reading or copying.
 
-  7. Additional Terms.
+  7.Additional Terms.
 
   "Additional permissions" are terms that supplement the terms of this
 License by making exceptions from one or more of its conditions.
@@ -657,7 +657,7 @@ notice like this when it starts in an interactive mode:
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
 
-The hypothetical commands `show w' and `show c' should show the appropriate
+The hypothetical commands `show w` and `show c` should show the appropriate
 parts of the General Public License.  Of course, your program's commands
 might be different; for a GUI interface, you would use an "about box".
 
