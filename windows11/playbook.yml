@@ -1,0 +1,40 @@
+---
+- name: Playbook Name
+  hosts: target_hosts
+  become: true
+  become_user: ${{ ansible_user}}
+  gather_facts: true
+
+- name: Ensure Chocolatey installed from internal repo
+  win_chocolatey:
+    name: chocolatey
+    state: present
+    source: http://internal/odata/repo/ChocolateyInstall.ps1
+    
+- name: Install ditto
+  win_chocolatey:
+    name: ditto
+    version: '3.24.247.0-beta'
+    source: http://internal/odata/repo
+    state: present
+    allow_prerelease: yes
+
+- name: Execute shell command on Windows
+  hosts: windows_hosts
+  tasks:
+    - name: Run shell command
+      win_shell: |
+        wsl --install
+
+- name: Execute PowerShell command
+  hosts: windows_hosts
+  tasks:
+    - name: Run PowerShell command
+      win_shell: |
+        reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v DisabledHotkeys /t REG_SZ /d V
+        reg add "HKEY_CURRENT_USER\Control Panel\Keyboard" /v PrintScreenKeyForSnippingEnabled /t REG_DWORD /d 0 /f
+      register: command_output
+
+    - name: Print command output
+      debug:
+        var: command_output.stdout_lines

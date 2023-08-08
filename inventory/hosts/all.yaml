@@ -1,0 +1,11 @@
+all:
+  hosts:
+    windows_host:
+      ansible_host: 192.168.1.100
+      ansible_connection: winrm
+      ansible_user: administrator
+      ansible_password: yourpassword
+      ansible_become: true
+      ansible_become_method: runas
+      ansible_become_user: Administrator
+      ansible_become_password: yourbecomepassword

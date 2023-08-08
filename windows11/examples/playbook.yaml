@@ -1,0 +1,68 @@
+---
+- name: Playbook Name
+  hosts: target_hosts
+  become: true
+  become_user: root
+  gather_facts: true
+
+  vars:
+    variable1: value1
+    variable2: value2
+
+  tasks:
+    - name: Task 1
+      <module_name>:
+        <module_arguments>
+      register: task1_output
+
+    - name: Task 2
+      <module_name>:
+        <module_arguments>
+      when: task1_output is succeeded
+
+    - name: Task 3
+      <module_name>:
+        <module_arguments>
+      loop:
+        - item1
+        - item2
+      register: task3_output
+
+    - name: Task 4
+      <module_name>:
+        <module_arguments>
+      loop: "{{ task3_output.results }}"
+      when: item.stdout is regex('pattern')
+
+    - name: Task 5
+      <module_name>:
+        <module_arguments>
+      environment:
+        ENV_VAR1: "{{ variable1 }}"
+        ENV_VAR2: "{{ variable2 }}"
+
+    - name: Task 6
+      <module_name>:
+        <module_arguments>
+      delegate_to: localhost
+
+    - name: Task 7
+      <module_name>:
+        <module_arguments>
+      delegate_to: "{{ inventory_hostname }}"
+
+  handlers:
+    - name: Handler 1
+      <module_name>:
+        <module_arguments>
+      listen: "task1_completed"
+
+    - name: Handler 2
+      <module_name>:
+        <module_arguments>
+      listen: "task2_completed"
+
+  post_tasks:
+    - name: Post Task 1
+      <module_name>:
+        <module_arguments>
