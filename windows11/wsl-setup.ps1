@@ -25,3 +25,8 @@ Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList "install --acce
 # Add your user to the docker group
 $currentUser= $(whoami)
 Add-LocalGroupMember -Group "docker-users" -Member $currentUser
+
+
+
+# configure WSL 2 
+wsl chsh -s $(which zsh)
