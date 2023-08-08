@@ -7,3 +7,7 @@ sudo mv terraform-docs /usr/local/bin
 
 #terraform-docs completion zsh > /usr/local/share/zsh/site-functions/_terraform-docs
 #autoload -U compinit && compinit
+
+
+# Running 
+# terraform-docs markdown table --output-file README.md --output-mode replace ${PWD}
