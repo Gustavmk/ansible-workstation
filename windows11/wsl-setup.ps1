@@ -30,3 +30,4 @@ Add-LocalGroupMember -Group "docker-users" -Member $currentUser
 
 # configure WSL 2 
 wsl chsh -s $(which zsh)
+
